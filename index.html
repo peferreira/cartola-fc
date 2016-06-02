@@ -6,17 +6,17 @@
 <script src="testesValorizacao.js"></script>
 <script type="text/javascript">
 $(document).ready(function () {
-	$.ajax({
-		type: "GET",
-		url: "https://api.cartolafc.globo.com/atletas/mercado",
-		success: function (obj) {
-			mostraBonsParaValorizar(obj);
-		},
-		error: function (obj) {
-			$("#principal").append("<div>Ops.. melhor instalar a extensão do chrome 'Allow-Control-Allow-Origin'</div>");
-			console.log("Ops.. melhor instalar a extensão do chrome 'Allow-Control-Allow-Origin'");
-		}
-	});
+    $.ajax({
+        type: "GET",
+        url: "https://api.cartolafc.globo.com/atletas/mercado",
+        success: function (obj) {
+            mostraBonsParaValorizar(obj);
+        },
+        error: function (obj) {
+            $("#principal").append("<div>Ops.. melhor instalar a extensão do chrome 'Allow-Control-Allow-Origin'</div>");
+            console.log("Ops.. melhor instalar a extensão do chrome 'Allow-Control-Allow-Origin'");
+        }
+    });
 });
 </script>
 </head>
