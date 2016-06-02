@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script src="testesValorizacao.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	$.ajax({
+		type: "GET",
+		url: "https://api.cartolafc.globo.com/atletas/mercado",
+		success: function (obj) {
+			mostraBonsParaValorizar(obj);
+		},
+		error: function (obj) {
+			$("#principal").append("<div>Ops.. melhor instalar a extensão do chrome 'Allow-Control-Allow-Origin'</div>");
+			console.log("Ops.. melhor instalar a extensão do chrome 'Allow-Control-Allow-Origin'");
+		}
+	});
+});
+</script>
+</head>
+<body>
+<div id="principal"></div>
+</body>
+</html>
