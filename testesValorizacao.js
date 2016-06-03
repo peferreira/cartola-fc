@@ -1,4 +1,25 @@
 /* Funções do atleta */
+
+var atletas = [];
+function initRodada(rodada_id) {
+    $.getJSON("https://raw.githubusercontent.com/wagnerferreirasp/cartola-fc/master/mercado/rodada" + rodada_id +".json", 
+        function(rodada) { 
+            atletas[rodada_id] = [];
+            rodada.atletas.forEach(function (atleta, index) {
+                atletas[rodada_id][atleta.atleta_id] = atleta;
+            });
+        }
+    );
+}
+
+function getPontuacao(rodada_id, atleta_id) {
+        return getAtributo(rodada_id, atleta_id, 'pontos_num');
+    }
+
+    function getAtributo(rodada_id, atleta_id, atributo) {
+        return atletas[rodada_id][atleta_id][atributo];
+    }
+
     function getNome(mercado, atleta) {
         return mercado["atletas"][atleta]["apelido"];
     }
